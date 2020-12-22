@@ -1,0 +1,70 @@
+/* ***************** */
+/* ***** flash ***** */
+/* ***************** */
+@import url("var.css");
+
+#toats {
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
+  color: var(--light-white);
+  border-radius: 7px;
+  min-width: 200px;
+  width: auto;
+  max-width: 80%;
+  font-size: 16px;
+  z-index: 1000;
+  padding: 0.5rem;
+  box-shadow: 0 0 29px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  transition: ease-in-out 650ms;
+  color: #fff;
+}
+#toats.alert-error {
+  background-color: var(--error);
+}
+#toats.alert-success {
+  background-color: var(--success);
+}
+#toats.alert-info {
+  background-color: var(--info);
+}
+#toats.alert-warning {
+  background-color: var(--orange);
+}
+#toats.hiden {
+  display: none;
+}
+#toats .toats_headers {
+  border-bottom: 0.2px solid #fff;
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+#toats .toats_headers h5 {
+  font-size: 0.8rem;
+}
+
+#toats .toats_die {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+#toats .toats_die a {
+  font-size: 0.5rem;
+}
+#toats .toats_core p {
+  font-size: 1rem;
+  font-family: var(--roboto);
+  color: #fff;
+}
+
+@media only screen and (max-width: 450px) {
+  #toats {
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+}

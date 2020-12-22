@@ -1,0 +1,81 @@
+@import url("../../../global/css/var.css");
+@import url("style.css");
+@import url("var_admin.css");
+
+.register__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50vh;
+  margin: 0;
+}
+.register-title {
+  text-align: center;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 1rem;
+}
+
+.container__form {
+  background-color: #fff;
+  padding: 1rem;
+}
+.form {
+  padding: 30px 40px;
+  width: 50%;
+}
+.form-control {
+  border: none;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: var(--text-grey);
+}
+
+.form-control input {
+  border: 1px solid var(--text-grey);
+  display: block;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px;
+}
+
+.form-control.success input {
+  border: 2px solid var(--success);
+}
+.form-control.success i.fa-check-circle {
+  visibility: visible;
+  color: var(--success);
+}
+.form-control.error input {
+  border: 2px solid var(--error);
+}
+.form-control.error i.fa-exclamation-circle {
+  visibility: visible;
+  color: var(--error);
+}
+
+.form-control i {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 45px;
+  right: 20px;
+  visibility: hidden;
+}
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.form-control.error small {
+  color: var(--error);
+}
