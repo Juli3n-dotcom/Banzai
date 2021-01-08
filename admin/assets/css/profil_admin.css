@@ -67,3 +67,69 @@
   color: #fff;
   border: 1px solid #fff;
 }
+
+/* ##### update ##### */
+
+.update__container {
+  margin-top: 4rem;
+  width: 95%;
+  height: auto;
+}
+
+.profil__pics img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.hiddenFileInput > input {
+  height: 100%;
+  width: 100;
+  opacity: 0;
+  cursor: pointer;
+}
+.hiddenFileInput {
+  position: relative;
+  left: -40px;
+  top: 60px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+  background: center center no-repeat;
+  background-size: 75% 75%;
+  background-image: url("../../../global/img/plus-circle-solid.svg");
+}
+
+.hiddenFileInput.hidden__delete {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  color: #f00134;
+  background-image: url("../../../global/img/trash-alt-regular.svg");
+}
+
+.update_footer {
+  min-height: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.update_footer input {
+  margin: 1rem;
+  padding: 0.2rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  background: var(--main-color);
+  color: #fff;
+  transition: 0.5s;
+  border: none;
+  cursor: pointer;
+}
+
+.update_footer input:hover {
+  background: #fff;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}

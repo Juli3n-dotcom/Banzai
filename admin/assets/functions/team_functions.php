@@ -30,6 +30,7 @@ function getMember(PDO $pdo):array
 
 
 
+
 function getMemberBy(PDO $pdo, string $colonne, $valeur): ?array
      {
        $req =$pdo->prepare(sprintf(

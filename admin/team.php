@@ -4,7 +4,6 @@ require_once __DIR__ . '/assets/config/bootstrap_admin.php';
 require_once __DIR__ . '/assets/functions/team_functions.php';
 
 
-
 $page_title ='Team';
 include __DIR__. '/assets/includes/header_admin.php';
 ?>
@@ -121,7 +120,13 @@ include __DIR__. '/assets/includes/header_admin.php';
                               echo "<div class='img-profil' style='background-image: url(assets/img/profil.svg)'></div>";
                             }
                           }else{
-                            echo "<div class='img-profil' style='background-image: url(assets/photos/ " .$photo['profil']. " )'></div>";
+
+                            //récupération de la photo de profil
+                            $id_photo = $member['photo_id'];
+                            $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
+                            $photo = $data->fetch(PDO::FETCH_ASSOC);
+
+                            echo "<div class='img-profil' style='background-image: url(assets/avatars/" .$photo['profil']. " )'></div>";
                           }
                         ?>
                     </td>

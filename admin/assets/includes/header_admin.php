@@ -25,7 +25,7 @@ if (stripos($_SERVER['REQUEST_URI'], 'login_admin.php')){
 }
 else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
      echo '<link rel="stylesheet" href="assets/css/register_admin.css">'; 
-}else if(stripos($_SERVER['REQUEST_URI'], 'profil_admin.php')){
+}else if(stripos($_SERVER['REQUEST_URI'], 'profil_admin.php') || stripos($_SERVER['REQUEST_URI'], 'update_profil.php')){
      echo '<link rel="stylesheet" href="assets/css/profil_admin.css">'; 
 }else{
      echo '<link rel="stylesheet" href="assets/css/style.css">';
@@ -122,7 +122,13 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                               echo "<img src='assets/img/profil.svg' alt='photo_profil_other'>";
                             }
                           }else{
-                            echo "<img src='assets/photos/ " .$photo['profil']. " )' alt='photo_profil'>";
+
+                               //récupération de la photo de profil
+                                   $id_photo = $Membre['photo_id'];
+                                   $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
+                                   $photo = $data->fetch(PDO::FETCH_ASSOC);
+                                   
+                              echo "<img src='assets/avatars/".$photo['profil']."' alt='photo_profil' class='profil-img'>";
                           }
                         ?>
                          </div>
@@ -135,7 +141,7 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                                    </li>
                                    <li>
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
-                                        <a href="#">Modifier Profil</a>
+                                        <a href="update_profil.php">Modifier Profil</a>
                                    </li>
                                    <li>
                                         <i class="fa fa-envelope-o" aria-hidden="true"></i>

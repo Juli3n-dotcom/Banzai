@@ -12,12 +12,14 @@ if (stripos($_SERVER['REQUEST_URI'], 'login_admin.php')){
     echo '<script type="text/javascript" src="assets/js/team_admin.js"></script>';
 }else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
      echo '<script type="text/javascript" src="assets/js/register_admin.js"></script>';  
+}else if(stripos($_SERVER['REQUEST_URI'], 'update_profil.php')){
+     echo '<script type="text/javascript" src="assets/js/update_admin.js"></script>';
 }else{
      echo '';
 }
 
 if (!stripos($_SERVER['REQUEST_URI'],  'login_admin.php')){
-     echo '<script type="text/javascript" src="assets/js/logout.js"></script>';
+     // echo '<script type="text/javascript" src="assets/js/logout.js"></script>';
 }
 ?>   
 <script type="text/javascript" src="assets/js/app.js"></script>
