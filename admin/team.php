@@ -97,11 +97,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                 <?php
                 // changement format date
                 $date = str_replace('/', '-', $member['date_enregistrement']);
-
-                //récupération de la photo de profil
-                $id_photo = $member['photo_id'];
-                $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
-                $photo = $data->fetch(PDO::FETCH_ASSOC);
+                $last_date = str_replace('/', '-', $member['last_login']);
 
                 ?>
                 <tr>
@@ -155,7 +151,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                     <?php endif;?>
                     <!-- <td><?= date('d-m-Y', strtotime($date))?> </td> -->
                     <td class="member_action">
-                        <a href="team.php?id=<?=$member['id_team_member'];?>" class="viewbtn" data-bs-toggle="modal" data-bs-target="#<?= $member['name'];?>"><i class="fa fa-eye"></i></a>
+                        <a href="#" class="viewbtn" data-bs-toggle="modal" data-bs-target="#<?= $member['name'];?>"><i class="fa fa-eye"></i></a>
 
                         <?php if($Membre['statut'] == 0) :?>
                           <a href="#" class="editbtn"><i class="fas fa-edit"></i></a>
@@ -197,10 +193,9 @@ include __DIR__. '/assets/includes/header_admin.php';
 
 </section>
 
-
 <!-- ############################################## ***** Modal add team member ***** ########################################################## -->
 <?php if($Membre['statut'] == 0) :?>
-<!-- Modal -->
+
 <div class="modal fade" id="addmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -209,7 +204,7 @@ include __DIR__. '/assets/includes/header_admin.php';
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="assets/php/add_team_member.php" method="post">
+        <form action="assets/php/team_script.php" method="post">
 
             <div class="mb-3">
             <label class="" for="statut">Civilité :</label>
@@ -259,7 +254,7 @@ include __DIR__. '/assets/includes/header_admin.php';
 <?php endif;?>
 <!-- ############################################## ***** Modal view team member ***** ########################################################## -->
   
-  <!-- Modal -->
+  
 <div class="modal fade" id="<?= $member['name'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -315,11 +310,15 @@ include __DIR__. '/assets/includes/header_admin.php';
                       ?>
               </p>
             </li>
-            <?php endif ;?>
+            <li>
+              <h6>Derniére connexion : </h6>
+              <p><?= date('d-m-Y', strtotime($last_date)) ;?></p>
+            </li>
             <li>
               <h6>Date d'enregistrement : </h6>
               <p><?= date('d-m-Y', strtotime($date)) ;?></p>
             </li>
+            <?php endif ;?>
           </ul>
         </div>
       </div>
@@ -332,7 +331,7 @@ include __DIR__. '/assets/includes/header_admin.php';
 
 <!-- ############################################## ***** Modal edit team member ***** ########################################################## -->
 <?php if($Membre['statut'] == 0) :?>
-  <!-- Modal -->
+ 
 <div class="modal fade" id="editmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -396,7 +395,7 @@ include __DIR__. '/assets/includes/header_admin.php';
 <?php endif;?>
 <!-- ############################################## ***** Modal delete team member ***** ########################################################## -->
 <?php if($Membre['statut'] == 0) :?>
-<!-- Modal -->
+
 <div class="modal fade" id="deletemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

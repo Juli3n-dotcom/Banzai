@@ -115,22 +115,22 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                               <?php
                                    if ($Membre['photo_id'] == NULL) {
                                         if($Membre['civilite'] == 0) {
-                              echo "<img src='assets/img/male.svg' alt='photo_profil_male'>";
-                              }elseif($Membre['civilite'] == 1){
-                              echo "<img src='assets/img/female.svg' alt='photo_profil_female'>";
-                            }else{
-                              echo "<img src='assets/img/profil.svg' alt='photo_profil_other'>";
-                            }
-                          }else{
+                                             echo "<img src='assets/img/male.svg' alt='photo_profil_male'>";
+                                        }elseif($Membre['civilite'] == 1){
+                                             echo "<img src='assets/img/female.svg' alt='photo_profil_female'>";
+                                        }else{
+                                             echo "<img src='assets/img/profil.svg' alt='photo_profil_other'>";
+                                        }
+                                   }else{
 
-                               //récupération de la photo de profil
-                                   $id_photo = $Membre['photo_id'];
-                                   $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
-                                   $photo = $data->fetch(PDO::FETCH_ASSOC);
+                                        //récupération de la photo de profil
+                                        $id_photo = $Membre['photo_id'];
+                                        $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
+                                        $photo = $data->fetch(PDO::FETCH_ASSOC);
                                    
-                              echo "<img src='assets/avatars/".$photo['profil']."' alt='photo_profil' class='profil-img'>";
-                          }
-                        ?>
+                                        echo "<img src='assets/avatars/".$photo['profil']."' alt='photo_profil' class='profil-img'>";
+                                   }
+                              ?>
                          </div>
                          <div class="member_menu">
                               <h3><?= $Membre['prenom'] ?> <?= $Membre['nom'] ?></h3>

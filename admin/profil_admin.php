@@ -3,6 +3,7 @@
 require_once __DIR__ . '/assets/config/bootstrap_admin.php';
 require_once __DIR__ . '/assets/functions/team_functions.php';
 
+$Membre = getMembre($pdo, $_GET['id_team_member'] ?? null);
 
 $page_title ='Profil';
 include __DIR__. '/assets/includes/header_admin.php';
@@ -52,7 +53,7 @@ include __DIR__.'/../global/includes/flash.php';
     </div>
 </div>
 
-
+<?= var_dump($Membre)?>
 
 <?php
 include __DIR__. '/assets/includes/footer_admin.php';

@@ -39,6 +39,17 @@ if(isset($_POST['login'])){
 
         }else{
 
+            $id = $tmember['id_team_member']; 
+
+            $req_update = $pdo->prepare(
+                'UPDATE team SET
+                last_login = :date
+                WHERE id_team_member = :id'
+            );
+            $req_update->bindParam(':id',$id,PDO::PARAM_INT);
+            $req_update->bindValue(':date',(new DateTime())->format('Y-m-d H:i:s'));
+            $req_update->execute();
+
         $_SESSION['team'] = $tmember;
         unset($_POST);
         session_write_close();
