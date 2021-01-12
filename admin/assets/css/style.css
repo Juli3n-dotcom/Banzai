@@ -592,8 +592,9 @@ tbody tr:nth-child(even) {
   display: flex;
 }
 .list_container ul li h6 {
-  margin-right: 2rem;
+  margin-right: 4rem;
   font-weight: bold;
+  width: 170px;
 }
 .list_container ul li p {
   max-width: 100px;
