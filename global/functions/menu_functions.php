@@ -9,7 +9,7 @@ if(!function_exists('nav_item')){
             $classe .= ' active';
         }
     return '<li class="' . $classe . '">
-        <a class="$linkClass" href="' . $lien . '">' . $title . '</a>
+        <a class="'.$linkClass.'" href="' . $lien . '">' . $title . '</a>
       </li>';
     }
 }
@@ -23,7 +23,7 @@ if(!function_exists('nav_item_children')){
             $classe .= ' active';
         }
     return '<li class="' . $classe . '">
-        <a class="$linkClass" href="' . $lien . '">' . $title . '</a>
+        <a class="'.$linkClass.'" href="' . $lien . '">' . $title . '</a>
       </li>';
     }
 }

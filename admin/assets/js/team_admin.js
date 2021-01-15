@@ -5,7 +5,7 @@ $(document).ready(function () {
         $('#addmodal').modal('show');
     });
 
-
+    
     //modal edit team member
     $('.editbtn').on('click', function () {
         $('#editmodal').modal('show');

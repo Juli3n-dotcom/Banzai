@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../config/bootstrap.php';
+require_once __DIR__.'/../../global/config/bootstrap.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,7 +13,7 @@ require_once __DIR__.'/../config/bootstrap.php';
    <title><?= $web_name ;?> | <?=$page_title?></title>
 
    <!-- CSS -->
-   <link rel="stylesheet" href="global/css/style.css">
+   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
@@ -29,9 +29,7 @@ require_once __DIR__.'/../config/bootstrap.php';
                 <?php 
                     $class='nav-link';
                     require 'menu.php';
-                ?>
-            </ul>
+                ?> 
+        </ul>
 
     </header>
-</body>
-</html>

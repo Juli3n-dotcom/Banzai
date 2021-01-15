@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../functions/menu_functions.php';
+require_once __DIR__.'/../../global/functions/menu_functions.php';
 ?>
 
 
