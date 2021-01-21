@@ -1,7 +1,19 @@
+@font-face {
+  font-family: "takota";
+  src: url("../font/takota-7lrl-webfont.woff2") format("woff2"),
+    url("../font/takota-7lrl-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "redwing";
+  src: url("../font/redwing-medium-webfont.woff2") format("woff2"),
+    url("../font/redwing-medium-webfont.woff") format("woff");
+}
+
 :root {
   /* ##### COLOR ##### */
   --light-black: rgba(0, 0, 0, 0.7);
   --light-white: rgba(255, 255, 255, 0.7);
+  --light-gray: #f3f4f5;
   --orange: rgba(249, 168, 38, 0.8);
   --green: #00bfa6;
   --success: rgba(0, 177, 106, 0.8) !important;
@@ -12,4 +24,6 @@
   /* ##### Font ##### */
 
   --arial: Arial, sans-serif;
+  --takota: "takota";
+  --redwing: "redwing";
 }
