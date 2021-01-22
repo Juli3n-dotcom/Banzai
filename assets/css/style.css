@@ -113,7 +113,7 @@ header .header__logo.active {
 .landing h1 {
   font-family: var(--takota);
   font-weight: 700;
-  font-size: 60px;
+  font-size: 100px;
   line-height: 1;
   letter-spacing: 1px;
   text-align: center;
@@ -125,6 +125,7 @@ header .header__logo.active {
   margin: 15px auto 0;
   color: #fff;
   font-size: 20px;
+  font-family: var(--play);
   text-align: center;
 }
 
@@ -175,6 +176,24 @@ header .header__logo.active {
 
 .custom-shape-divider-bottom-1611244188 .shape-fill {
   fill: #ffffff;
+}
+
+/* ##### work ##### */
+
+.work {
+  margin-top: 4rem;
+}
+
+.heading__title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10rem;
+}
+.heading__title h3 {
+  font-family: var(--play);
+  font-size: 2rem;
+  margin: 0.5rem 0 1rem;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 @media screen and (max-width: 768px) {

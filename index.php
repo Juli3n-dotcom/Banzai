@@ -3,7 +3,7 @@ $page_title ='Accueil';
 include __DIR__. '/assets/includes/header.php'
 ?>
 
-<section class="landing">
+<section class="landing" id="landing">
 
    <div class="content">
        <div class="contentBx w50">
@@ -28,7 +28,13 @@ include __DIR__. '/assets/includes/header.php'
 
 </section>
 
+<section class="work" id="work">
 
+    <div class="heading__title">
+        <h3>A votre service</h3>
+    </div>
+
+</section>
 
 
 
