@@ -18,8 +18,42 @@ include __DIR__. '/assets/includes/header.php'
 
 </section>
 
+<section class="about full__page-section" id="about">
+    
+    <div class="w50 about__left-part">
+        <h2>Qui sommes nous?</h2>
+    </div>
 
-<section class="work" id="work">
+    <div class="w50 about__right-part">
+        <div class="about__right-title">
+            <p>Agence Web à taille humaine basé à Courcouronnes</p>
+            <span></span>
+        </div>
+
+        <div class="about__right-text">
+        <p>
+            Nous entreprenons un rapport privilégié avec nos clients.
+Ecoute, conseil et créativité nous impliquent à vos côtes, tel un partenaire de votre développement digital.
+Quel que soit le secteur d’activité, la problématique rencontrée, l’importance du budget, nous vous accompagnons dans vos projets.
+        </p>
+        </div>
+
+        <div class="about__right-title">
+            <p>L'indépendance notre force</p>
+            <span></span>
+        </div>
+
+        <div class="about__right-text">
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste molestiae, inventore voluptas fugit nemo laboriosam at! Illo nemo hic cum quas perferendis a, molestiae fuga, debitis autem mollitia rerum eum!
+        </p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- <section class="work" id="work">
     <div class="title__heading">
         <h3>Notre</h3>
         <h4>Savoir faire</h4>
@@ -36,7 +70,7 @@ include __DIR__. '/assets/includes/header.php'
     </div>
     
 
-</section>
+</section> -->
 
 
 <?php

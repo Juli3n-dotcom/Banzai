@@ -86,12 +86,11 @@ header .header__logo.active {
   background-position: center;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-  margin-bottom: 4rem;
 }
 
 .landing .content {
   position: relative;
-  top: 55%;
+  top: 50%;
   transform: translateY(-45%) scaleX(-1);
   /* left: 10%; */
   color: #fff;
@@ -108,7 +107,7 @@ header .header__logo.active {
 .landing h1 {
   font-family: var(--takota);
   font-weight: 700;
-  font-size: 60px;
+  font-size: 8rem;
   line-height: 1;
   letter-spacing: 1px;
   text-align: center;
@@ -143,6 +142,54 @@ header .header__logo.active {
   min-width: 50%;
 }
 
+.full__page-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ##### About ##### */
+
+.about__left-part {
+  background: linear-gradient(to right, #fec200, #ffca03);
+  text-align: center;
+  display: flex;
+}
+.about__left-part h2 {
+  margin: auto;
+  color: #fff;
+  /* color: #9fd6f2; */
+  font-weight: 400;
+  font-family: var(--takota);
+  font-size: 4rem;
+}
+
+.about__right-part {
+  padding: 2rem;
+  align-items: center;
+  font-family: var(--playfair);
+}
+
+.about__right-part .about__right-title {
+  margin-left: 1rem;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+.about__right-part .about__right-text {
+  margin-bottom: 3rem;
+}
+
+.about__right-part span {
+  width: 60px;
+  height: 4px;
+  background: #fec200;
+  display: block;
+  margin-top: 1rem;
+}
+
 /* ##### Work ##### */
 
 .title__heading {
@@ -165,20 +212,6 @@ header .header__logo.active {
 
 .title__heading p {
   text-transform: lowercase;
-}
-
-.work__part {
-  margin-top: 4rem;
-  width: 100%;
-  text-align: center;
-}
-
-.work__part #website {
-  height: 100px;
-  width: 100px;
-  justify-content: center;
-  background: url("../img/pexels-ann-h-1762851.jpg");
-  background-size: cover;
 }
 
 @media screen and (max-width: 768px) {
