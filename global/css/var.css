@@ -9,6 +9,13 @@
     url("../font/redwing-medium-webfont.woff") format("woff");
 }
 
+@font-face {
+  font-family: "playfair";
+  src: url("../font/playfairdisplay-variablefont_wght-webfont.woff2")
+      format("woff2"),
+    url("../font/playfairdisplay-variablefont_wght-webfont.woff") format("woff");
+}
+
 :root {
   /* ##### COLOR ##### */
   --light-black: rgba(0, 0, 0, 0.7);
@@ -27,4 +34,5 @@
   --arial: Arial, sans-serif;
   --takota: "takota";
   --redwing: "redwing";
+  --playfair: "playfair";
 }

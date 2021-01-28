@@ -19,8 +19,24 @@ include __DIR__. '/assets/includes/header.php'
 </section>
 
 
+<section class="work" id="work">
+    <div class="title__heading">
+        <h3>Notre</h3>
+        <h4>Savoir faire</h4>
+        <p>
+            Nous sommes là pour vous accompagner
+            dans vos differents projets web !
+        </p>
+    </div>
 
+    
+    <div class="work__part" id="website">
+        <h3>Création</h3>
+        <h4>Site Vitrine</h4>
+    </div>
+    
 
+</section>
 
 
 <?php
