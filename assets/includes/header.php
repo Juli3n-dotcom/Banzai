@@ -6,7 +6,7 @@ require_once __DIR__.'/../../global/config/bootstrap.php';
 <head>
     <!-- meta -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="banzai.com : est une agence web spécialisée dans le référencement naturel. Elle conseille et met en place tout son savoir faire pour augmenter le positionnement de votre site Internet sur les mots clés de votre domaine d'activité. Obtenez un audit gratuit en contactant BH Internet.">
     <meta name="Keywords" content="Création site web entreprise, création site web paris, création site web essonne, création site web 91, creation site web 77, creation site web professionnel, creation site e-commerce, site vitrine, création site wordpress, agence web">
     <meta name="author" content="Julien Quentier">

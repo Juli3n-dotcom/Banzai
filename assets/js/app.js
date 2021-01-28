@@ -7,6 +7,7 @@ const line2 = document.querySelector('.menu__icon--two')
 const line3 = document.querySelector('.menu__icon--three')
 const menu = document.querySelector('.menu');
 const links = document.querySelectorAll('.menu li');
+const title_parts = document.querySelectorAll('.title__part');
 
 window.addEventListener('scroll', function () {
     var links = document.querySelectorAll('.nav-link')
@@ -24,6 +25,9 @@ window.addEventListener('scroll', function () {
 
 hamburger.addEventListener('click', () => {
     body.classList.toggle('active');
+    title_parts.forEach(title => {
+        title.classList.toggle('none')
+    });
     header_logo.classList.toggle('active');
     menu.classList.toggle('open');
     links.forEach(link => {
@@ -32,4 +36,20 @@ hamburger.addEventListener('click', () => {
     line1.classList.toggle('active');
     line2.classList.toggle('active');
     line3.classList.toggle('active');
+    
 })
+
+
+// work
+
+const service_name = document.querySelector('.work__left-part');
+
+if (window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+    if (window.scrollY >= 1550) {
+        service_name.classList.add('fixed')
+    } else {
+        service_name.classList.remove('fixed')
+    }
+})
+}

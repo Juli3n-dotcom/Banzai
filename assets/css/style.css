@@ -147,16 +147,19 @@ header .header__logo.active {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 /* ##### About ##### */
 
-.about__left-part {
+.about__left-part,
+.work__left-part {
   background: linear-gradient(to right, #fec200, #ffca03);
   text-align: center;
   display: flex;
 }
-.about__left-part h2 {
+.about__left-part h2,
+.work__left-part h2 {
   margin: auto;
   color: #fff;
   /* color: #9fd6f2; */
@@ -165,10 +168,14 @@ header .header__logo.active {
   font-size: 4rem;
 }
 
-.about__right-part {
-  padding: 2rem;
+.about__right-part,
+.work__right-part {
   align-items: center;
   font-family: var(--playfair);
+}
+
+.about__right-part {
+  padding: 2rem;
 }
 
 .about__right-part .about__right-title {
@@ -192,26 +199,65 @@ header .header__logo.active {
 
 /* ##### Work ##### */
 
-.title__heading {
-  text-align: center;
-  text-transform: uppercase;
+.work__left-part {
+  background: #fff;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: position 1s linear;
+}
+.work__left-part.fixed {
+  position: fixed;
+}
+.work__left-part h2 {
   color: var(--light-black);
-  font-family: var(--playfair);
-  width: 100%;
-  padding: 1rem;
 }
 
-.title__heading h3 {
-  font-size: 1.4rem;
+.work__right-part {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
-.title__heading h4 {
-  top: 3rem;
+
+.web__create,
+.ecommerce,
+.reference {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../img/blue-devices-top-view-creative-website-builder-3d-rendering_72104-3666.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  transition: 15s transform linear;
+}
+
+.web__create .title__heading,
+.ecommerce .title__heading,
+.reference .title__heading {
+  margin: auto;
   font-size: 2rem;
-  margin: 0.5rem 0 1rem;
 }
 
-.title__heading p {
-  text-transform: lowercase;
+.web__create .title__heading h3,
+.ecommerce .title__heading h3,
+.reference .title__heading h3 {
+  font-size: 4rem;
+}
+
+.ecommerce {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../img/pexels-mikhail-nilov-6608888.jpg");
+}
+
+.reference {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../img/pexels-andrea-piacquadio-941693.jpg");
 }
 
 @media screen and (max-width: 768px) {
@@ -340,18 +386,55 @@ header .header__logo.active {
 
   .landing {
     background-position-x: 50%;
+    width: 100%;
   }
 
   .landing .content {
-    top: 55%;
+    top: 50%;
     left: -5%;
+  }
+
+  /* ##### About ##### */
+
+  .about__left-part,
+  .work__left-part {
+    background: #fff;
+    height: 2.5rem;
+    position: sticky;
+    top: 2.5rem;
+    z-index: 10;
+    margin-top: 4rem;
+  }
+
+  .title__part.none {
+    z-index: 0;
+  }
+
+  .about__left-part h2,
+  .work__left-part h2 {
+    color: var(--light-black);
+    font-size: 2rem;
+  }
+
+  /* ##### Work ##### */
+
+  .work__left-part {
+    margin-bottom: 2rem;
+  }
+  .full__page-section {
+    height: inherit;
+    display: block;
+  }
+
+  .work__right-part {
+    position: inherit;
   }
 }
 @media screen and (max-width: 500px) {
   /* ##### landing ##### */
 
   .landing .content {
-    top: 55%;
+    top: 50%;
     left: -5%;
   }
 

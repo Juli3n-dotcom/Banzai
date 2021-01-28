@@ -20,7 +20,7 @@ include __DIR__. '/assets/includes/header.php'
 
 <section class="about full__page-section" id="about">
     
-    <div class="w50 about__left-part">
+    <div class="w50 about__left-part title__part">
         <h2>Qui sommes nous?</h2>
     </div>
 
@@ -53,24 +53,38 @@ Quel que soit le secteur d’activité, la problématique rencontrée, l’impor
 </section>
 
 
-<!-- <section class="work" id="work">
-    <div class="title__heading">
-        <h3>Notre</h3>
-        <h4>Savoir faire</h4>
-        <p>
-            Nous sommes là pour vous accompagner
-            dans vos differents projets web !
-        </p>
+<section class="work full__page-section" id="work">
+
+    <div class="w50 work__left-part title__part">
+        <h2>Nos Services</h2>
     </div>
 
-    
-    <div class="work__part" id="website">
-        <h3>Création</h3>
-        <h4>Site Vitrine</h4>
+<div class="w50 work__right-part">
+    <div class="web__create">
+       <div class="title__heading">
+            <h4>Création de</h4>
+            <h3>site vitrine</h3>
+       </div>
     </div>
-    
 
-</section> -->
+     <div class="ecommerce">
+        <div class="title__heading">
+            <h4>Site</h4>
+            <h3>E-Commerce</h3>
+       </div>
+    </div>
+
+    <div class="reference">
+        <div class="title__heading">
+            <h3>WebMaster</h3>
+       </div>
+    </div>
+
+</div>
+
+
+
+</section>
 
 
 <?php
