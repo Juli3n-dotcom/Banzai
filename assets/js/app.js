@@ -44,7 +44,7 @@ hamburger.addEventListener('click', () => {
 
 const service_name = document.querySelector('.work__left-part');
 
-if (window.innerWidth > 768) {
+if (window.width > 768) {
     window.addEventListener('scroll', () => {
     if (window.scrollY >= 1550) {
         service_name.classList.add('fixed')
