@@ -342,7 +342,7 @@ include __DIR__. '/assets/includes/header_admin.php';
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="assets/php/update_team_member.php" method="post">
+        <form action="assets/php/team_script.php" method="post">
           <input type="hidden" name="update_id" id="update_id">
             <div class="mb-3">
             <label class="" for="statut">Civilité :</label>
@@ -406,7 +406,7 @@ include __DIR__. '/assets/includes/header_admin.php';
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="assets/php/delete_member.php" method="post">
+        <form action="assets/php/assets/php/team_script.php" method="post">
           <input type="hidden" name="delete_id" id="delete_id">
             
           <p>Etes vous sur de vouloir supprimer cette personne?</p>

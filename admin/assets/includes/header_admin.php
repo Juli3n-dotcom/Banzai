@@ -60,7 +60,7 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                     </a>
                </li>
                <li>
-                    <a href="">
+                    <a href="post.php">
                          <i class="fas fa-folder"></i>
                          <span>Post</span>
                     </a>

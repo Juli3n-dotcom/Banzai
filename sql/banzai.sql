@@ -82,3 +82,14 @@ FOREIGN KEY
     PRIMARY KEY
                         (id)
 )ENGINE=INNODB;
+
+                        CREATE TABLE pics
+                        (
+                              id_pics INT(3) NOT NULL
+                              AUTO_INCREMENT,
+ img VARCHAR
+                              (255) NOT NULL,
+ PRIMARY KEY
+                              (id_pics)
+)ENGINE=INNODB;
+
