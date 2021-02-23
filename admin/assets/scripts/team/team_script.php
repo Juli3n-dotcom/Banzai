@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../config/bootstrap_admin.php';
-require_once __DIR__ . '/../functions/team_functions.php';
+require_once __DIR__ . '/../../config/bootstrap_admin.php';
+require_once __DIR__ . '/../../functions/team_functions.php';
 
 /* #############################################################################
 
@@ -121,17 +121,17 @@ if(isset($_POST['update'])){
 
         if($_FILES['avatar']['error'] !== UPLOAD_ERR_OK) {
             ajouterFlash('warning','Probléme lors de l\'envoi du fichier.code '.$_FILES['avatar']['error']);
-            header('location: ../../update_profil.php');
+            header('location: ../../../update_profil.php');
 
 
         }elseif ($_FILES['avatar']['size']<12 || exif_imagetype($_FILES['avatar']['tmp_name'])=== false ){
           ajouterFlash('error','Le fichier envoyé n\'est pas une image');
-           header('location: ../../update_profil.php');
+           header('location: ../../../update_profil.php');
 
         }else{
 
         $extension1 = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-        $path1 = __DIR__.'/../avatars';
+        $path1 = __DIR__.'/../../avatars';
 
         
 
@@ -163,7 +163,7 @@ if(isset($_POST['update'])){
                     $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
                     $photo = $data->fetch(PDO::FETCH_ASSOC);
 
-                    $file = __DIR__.'/../avatars';
+                    $file = __DIR__.'/../../avatars';
 
                     opendir($file);
                     unlink($file.$photo['profil']);
@@ -241,7 +241,7 @@ if(isset($_POST['deleteAvatar'])){
     $photo = $data->fetch(PDO::FETCH_ASSOC);
 
 
-    $file = '../avatars/';
+    $file = '../../avatars/';
     $dir = opendir($file);
     unlink($file.$photo['profil']);
     closedir($dir);
@@ -260,7 +260,7 @@ if(isset($_POST['deleteAvatar'])){
 
 /* #############################################################################
 
-Update a partir team.php (fonction uniquement ADMIN)
+Ajout a partir team.php (fonction uniquement ADMIN)
 
 # Ajout d'un membre par un admin
 

@@ -18,19 +18,6 @@ $Allmembres = $pdo->query('SELECT * FROM team ORDER BY date_enregistrement DESC 
 
 
 
-function getMember(PDO $pdo):array
-{
-  $req=$pdo->query(
-     'SELECT *
-       FROM team'
-  );
-  $memberTeam = $req->fetchAll(PDO::FETCH_ASSOC);
-  return $memberTeam;
-}
-
-
-
-
 function getMemberBy(PDO $pdo, string $colonne, $valeur): ?array
      {
        $req =$pdo->prepare(sprintf(

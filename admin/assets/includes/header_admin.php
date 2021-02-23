@@ -14,6 +14,8 @@ if (session_status() === PHP_SESSION_NONE){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title><?= $web_name ;?> | <?=$page_title?></title>
+    <link rel="icon" href="assets/img/dashboard.svg">
+    <link rel="apple-touch-icon" href="assets/img/dashboard.svg">
 
 <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -60,7 +62,7 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                     </a>
                </li>
                <li>
-                    <a href="post.php">
+                    <a href="posts.php">
                          <i class="fas fa-folder"></i>
                          <span>Post</span>
                     </a>
@@ -72,15 +74,15 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                     </a>
                </li>
                <li>
-                    <a href="">
-                         <span class="ti-folder"></span>
-                         <span>Projects</span>
+                    <a href="categories.php">
+                         <i class="fas fa-align-left"></i>
+                         <span>Catégories</span>
                     </a>
                </li>
                <li>
-                    <a href="">
-                         <span class="ti-time"></span>
-                         <span>Timesheet</span>
+                    <a href="langages.php">
+                         <i class="fas fa-code"></i>
+                         <span>Langages</span>
                     </a>
                </li>
                <li>

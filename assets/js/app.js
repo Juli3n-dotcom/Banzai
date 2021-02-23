@@ -52,4 +52,4 @@ if (window.innerWidth > 768 || window.width > 768) {
         service_name.classList.remove('fixed')
     }
 })
-}
+} 

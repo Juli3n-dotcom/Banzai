@@ -12,6 +12,12 @@
   text-decoration: none !important;
   list-style-type: none;
 }
+button:focus,
+input[type=button], 
+input[type=submit] {
+  outline:0;
+}
+
 .dnone {
   display: none;
 }
@@ -267,6 +273,13 @@ main {
   color: var(--main-color);
 }
 
+.card__footer input{
+  color: var(--main-color);
+  border: none;
+  background: none;
+
+}
+
 .recent {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -346,6 +359,7 @@ main {
 }
 .disabledBtn {
   background: var(--text-grey);
+  cursor: not-allowed;
 }
 .deleteBtn {
   background: rgba(240, 52, 52, 0.8);
@@ -375,17 +389,42 @@ td {
   padding: 1rem 1rem;
   color: var(--color-dark);
 }
-
-.member_action a {
-  text-decoration: none;
+.member_action{
+  display: flex;
+  align-items: center;
 }
-.member_action a {
-  margin-right: 10px;
-  color: var(--main-color);
+.member_action  .viewbtn,
+.member_action  .deletebtn,
+.member_action  .editbtn
+{
+  appearance: none;
+    -moz-appearance: none;
+-webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  border: none;
+  margin-right: 15px;
 }
 
-.member_action .delete_team_member {
-  color: rgba(240, 52, 52, 0.8);
+.member_action  .linkbtn{
+  background: url('../img/eye-regular.svg') no-repeat;
+  height: 18px;
+  width: 18px;
+  margin-right: 15px;
+  }
+
+.member_action  .viewbtn{
+background: url('../img/info-circle-solid.svg') no-repeat;
+}
+
+.member_action  .editbtn{
+  background: url('../img/edit-regular.svg') no-repeat;
+  
+}
+
+.member_action  .deletebtn{
+  background: url('../img/trash-alt-regular.svg') no-repeat;
+  
 }
 
 tbody tr:nth-child(even) {
@@ -452,6 +491,13 @@ tbody tr:nth-child(even) {
   border: 3px solid #efefef;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.img-logo {
+  height: 35px;
+  width: 35px;
+  background-repeat: no-repeat;
+  
 }
 
 .summary__card {
@@ -600,6 +646,62 @@ tbody tr:nth-child(even) {
   max-width: 100px;
 }
 
+/* **** Modal update **** */
+
+.hiddenFileInput > input {
+  height: 100%;
+  width: 100;
+  opacity: 0;
+  cursor: pointer;
+}
+.hiddenFileInput {
+  position: relative;
+  left: -40px;
+  top: 60px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+  background: center center no-repeat;
+  background-size: 75% 75%;
+  background-image: url("../../../global/img/plus-circle-solid.svg");
+}
+
+.hiddenFileInput.hidden__delete {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  color: #f00134;
+  background-image: url("../../../global/img/trash-alt-regular.svg");
+}
+
+#update_lang .hiddenFileInput,
+#update_cat .hiddenFileInput,
+#update_post .hiddenFileInput{
+  left: 0;
+  top: 10px;
+}
+
+/* **** form **** */
+
+.form_label{
+  margin-bottom: 0.5rem;
+}
+
+
+/* **** Post **** */
+
+.td-cat{
+  display: flex;
+  align-items: center;
+}
+
+.cat-img{
+  height: 25px;
+  width: 25px;
+  background-repeat: no-repeat;
+}
 /* **** Responsive **** */
 
 @media only screen and (min-width: 800px) {

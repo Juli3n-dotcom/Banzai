@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../config/bootstrap_admin.php';
+require_once __DIR__ . '/../../config/bootstrap_admin.php';
 
 if(isset($_POST['login'])){
 
@@ -53,7 +53,7 @@ if(isset($_POST['login'])){
         $_SESSION['team'] = $tmember;
         unset($_POST);
         session_write_close();
-        header('Location: ../../index_admin.php');
+        header('Location: ../../../index_admin.php');
         ajouterFlash('success','Bonjour');
 
         }

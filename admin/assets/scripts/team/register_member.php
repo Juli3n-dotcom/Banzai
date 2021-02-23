@@ -8,31 +8,31 @@ if(isset($_POST['add_team_member'])){
     if(!preg_match('~^[a-zA-Z-]+$~',$_POST['add_name_member'])){
 
          ajouterFlash('error','Nom manquant');
-         header('location: ../../register.php');
+         header('location: ../../../register.php');
 
 }elseif (!preg_match('~^[a-zA-Z-]+$~',$_POST['add_prenom_member'])) {
 
          ajouterFlash('error','Prénom manquant');
-         header('location: ../../register.php');
+         header('location: ../../../register.php');
 
 }elseif(getMemberBy($pdo, 'email', $_POST['add_email_member'])!==null){
 
          ajouterFlash('error','Email déja utilisé !');
-         header('location: ../../register.php');
+         header('location: ../../../register.php');
         
 }elseif (!filter_var($_POST['add_email_member'], FILTER_VALIDATE_EMAIL)) {
        
          ajouterFlash('error','Email non valide ou manquant!');
-         header('location: ../../register.php');
+         header('location: ../../../register.php');
 
  }elseif (!preg_match('~^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$~',$_POST['password'])) {
         ajouterFlash('danger','Votre mot de passe doit contenir :minimum 8 caractéres, 1 maj, 1min, 1chiffre  et 1 caractére spécial.');
-         header('location: ../../register.php');
+         header('location: ../../../register.php');
       
      
     }elseif ($_POST['password'] !== $_POST['confirm'] ){
         ajouterFlash('danger','Merci de confirmer votre mot de passe.');
-         header('location: ../../register.php');
+         header('location: ../../../register.php');
 
 }else{
 
@@ -103,11 +103,11 @@ if(isset($_POST['add_team_member'])){
         
         if($req){
         ajouterFlash('success','Membre Ajouté !');
-        header('location: ../../team.php');
+        header('location: ../../../team.php');
         unset($_POST); 
         }else{
         ajouterFlash('error','no member add !');
-        header('location: ../../register.php');
+        header('location: ../../../register.php');
         }
     }
 }

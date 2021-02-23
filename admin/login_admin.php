@@ -15,7 +15,7 @@ include __DIR__. '/assets/includes/header_admin.php';
         <img src="assets/img/login.svg" alt="image">
     </div>
     <div class="login__box">
-        <form action="assets/php/login_member.php" method="POST">
+        <form action="assets/scripts/login/login_member.php" method="POST">
             <img class="login__avatar" src="assets/img/profil.svg" alt="image de profil">
 
             <h2>Bienvenue</h2>

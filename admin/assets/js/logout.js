@@ -16,7 +16,7 @@ $(function()
 
          if (minPast > 5){
             sessionStorage.removeItem('lastTimeStamp');
-            window.location = "assets/php/logout.php";
+            window.location = "assets/scripts/login/logout.php";
             return false
          }
          

@@ -40,7 +40,7 @@ $(document).ready(function () {
 
     });
 
-    //confirmation de la valdiation
+    //confirmation de la validation
     $('#confirmedelete').on('click', function () {
         if ($(this).is(':checked')) {
             $('#deletemember').prop("disabled", false).removeClass('disabledBtn').addClass('deleteBtn');

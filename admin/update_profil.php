@@ -12,7 +12,7 @@ include __DIR__.'/../global/includes/flash.php';
 
 <section class="update__container">
 
-    <form action="assets/php/team_script.php" method="POST" enctype="multipart/form-data"> 
+    <form action="assets/scripts/team/team_script.php" method="POST" enctype="multipart/form-data"> 
 
     <input type="hidden"  name="id_membre" value="<?= $Membre['id_team_member']?>">
 

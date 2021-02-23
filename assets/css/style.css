@@ -394,6 +394,12 @@ header .header__logo.active {
     left: -5%;
   }
 
+  /* ##### Work ##### */
+
+  .work__left-part.fixed {
+    position: inherit;
+  }
+
   /* ##### About ##### */
 
   .about__left-part,

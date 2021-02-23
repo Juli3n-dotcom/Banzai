@@ -161,7 +161,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                     </td>
                 </tr>
 
-                <!-- ############################################## ***** Modal view team member ***** ########################################################## -->
+<!-- ############################################## ***** Modal view team member ***** ########################################################## -->
   
   
 <div class="modal fade" id="<?= $member['name'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -281,7 +281,7 @@ include __DIR__. '/assets/includes/header_admin.php';
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="assets/php/team_script.php" method="post">
+        <form action="assets/scripts/team/team_script.php" method="post">
 
             <div class="mb-3">
             <label class="" for="statut">Civilité :</label>
@@ -342,7 +342,7 @@ include __DIR__. '/assets/includes/header_admin.php';
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="assets/php/team_script.php" method="post">
+        <form action="assets/scripts/team/team_script.php" method="post">
           <input type="hidden" name="update_id" id="update_id">
             <div class="mb-3">
             <label class="" for="statut">Civilité :</label>
@@ -395,6 +395,8 @@ include __DIR__. '/assets/includes/header_admin.php';
   </div>
 </div>
 <?php endif;?>
+
+
 <!-- ############################################## ***** Modal delete team member ***** ########################################################## -->
 <?php if($Membre['statut'] == 0) :?>
 
@@ -406,7 +408,7 @@ include __DIR__. '/assets/includes/header_admin.php';
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="assets/php/assets/php/team_script.php" method="post">
+        <form action="assets/scripts/team/assets/php/team_script.php" method="post">
           <input type="hidden" name="delete_id" id="delete_id">
             
           <p>Etes vous sur de vouloir supprimer cette personne?</p>
