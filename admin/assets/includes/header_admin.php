@@ -9,8 +9,7 @@ if (session_status() === PHP_SESSION_NONE){
  
 ?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="fr">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title><?= $web_name ;?> | <?=$page_title?></title>
@@ -35,6 +34,8 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
 ?>   
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.min.css">
 <script src="https://kit.fontawesome.com/3760b9e264.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 </head>
 <body>
 
@@ -155,7 +156,7 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                                    </li>
                                    <li>
                                         <i class="fa fa-sign-out" aria-hidden="true"></i>
-                                        <a href="assets/php/logout.php"> Déconnexion</a>
+                                        <a href="assets/scripts/login/logout.php"> Déconnexion</a>
                                    </li>
                               </ul>
                          </div>

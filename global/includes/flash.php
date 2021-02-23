@@ -1,25 +1,35 @@
 <?php foreach (recupererFlash() as $messages): ?>
-
-<div id="toats" class="notif alert-<?= $messages['type'];?>">
-    <div class="toats_headers">
-        <a class="toats_die">
-            X
-        </a>
-            <h5><i class="fas fa-exclamation-circle"></i> Notification :</h5>
+<div id="notif">
+<div class="notification">
+  <div class="card <?= $messages['type'];?>">
+    <div class="content">
+      <div class="img"></div>
+      <div class="details">
+         <span class="name"><?= $messages['type'];?></span>
+        <p><?= $messages['message'];?></p>
+      </div>
     </div>
-    <div class="toats_core">
-        <p>
-        <?= $messages['message'];?>
-        </p>
-    </div>          
+    <span class="close-btn">
+      <i class="fas fa-times"></i>
+     </span>
+  </div>
+</div>
 </div>
 
 <script>
-    setTimeout(function(){ document.querySelector(".notif").remove();}, 4000 );
-
-    document.querySelector(".toats_die").addEventListener("click", ()=>{
-        document.querySelector(".notif").remove();
+   
+      setTimeout(function(){
+      document.querySelector(".notification").classList.add("hide");
+      document.querySelector(".notification").classList.remove("show");
+      },3000);
+    document.querySelector('.close-btn').addEventListener("click", ()=>{
+      document.querySelector(".notification").classList.add("hide");
+      document.querySelector(".notification").classList.remove("show"); 
     });
+    setTimeout(function(){
+      document.querySelector(".notification").remove();
+      },5000);
+  
 </script>
 
 <?php endforeach ?> 
