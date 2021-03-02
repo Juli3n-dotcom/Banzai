@@ -14,12 +14,14 @@ include __DIR__. '/assets/includes/header_admin.php';
 <section>
   <div class="dash__cards">
 
+  <?php foreach(getCatOrder($pdo) as $cat): ?>
+
     <div class="card__single">
       <div class="card__body">
-        <i class="fas fa-store"></i>
+      <div class='img-logo' style='background-image: url(../global/uploads/<?=getImg($pdo, $cat['pics_id'])?>)'></div>
         <div>
-          <h5>Site Vitrine</h5>
-          <h4>0</h4>
+          <h5><?= $cat['titre']?></h5>
+          <h4><?= getPostbyCar($pdo, $cat['id_categorie'] )?></h4>
         </div>
       </div>
       <div class="card__footer">
@@ -27,31 +29,9 @@ include __DIR__. '/assets/includes/header_admin.php';
       </div>
     </div>
 
-    <div class="card__single">
-      <div class="card__body">
-        <i class="fas fa-shopping-cart"></i>
-        <div>
-          <h5>E-commerce</h5>
-          <h4>0</h4>
-        </div>
-      </div>
-      <div class="card__footer">
-        <a href="">View all</a>
-      </div>
-    </div>
+  <?php endforeach;?>
 
-    <div class="card__single">
-      <div class="card__body">
-        <i class="far fa-compass"></i>
-        <div>
-          <h5>Autres</h5>
-          <h4>0</h4>
-        </div>
-      </div>
-      <div class="card__footer">
-        <a href="">View all</a>
-      </div>
-    </div>
+    
 
   </div>
 </section>
@@ -82,7 +62,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                 <th>Mots Clés</th>
                 <th>N° Site</th>
                 <?php if($Membre['statut'] == 0) :?>
-                <th>Action</th>
+                <th>Actions</th>
                 <?php endif;?>
             </tr>
           </thead>
@@ -103,7 +83,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                     ?>  
                     <td><?=$cat['titre']?></td>
                     <td><?=$cat['motscles']?></td>
-                    <td>0</td>
+                    <td><?= getPostbyCar($pdo, $cat['id_categorie'] )?></td>
                     
                     <?php if($Membre['statut'] == 0) :?>
                     <td class="member_action">
@@ -124,6 +104,7 @@ include __DIR__. '/assets/includes/header_admin.php';
        
     </div> 
   </div> 
+
 
 <?php if($Membre['statut'] == 0) :?>
   <!-- ############################################## ***** Modal add cat ***** ########################################################## -->

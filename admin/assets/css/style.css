@@ -247,10 +247,16 @@ main {
 }
 
 .card__body span,
-.card__body i {
+.card__body i
+{
   font-size: 1.7rem;
   color: #777;
   padding-right: 1.4rem;
+}
+.card__body .img-logo {
+  margin-right: 1.4rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 .card__body h5 {
@@ -494,8 +500,8 @@ tbody tr:nth-child(even) {
 }
 
 .img-logo {
-  height: 35px;
-  width: 35px;
+  height: 2rem;
+  width: 2rem;
   background-repeat: no-repeat;
   
 }
