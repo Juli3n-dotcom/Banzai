@@ -34,7 +34,7 @@ include __DIR__.'/../global/includes/flash.php';
                 $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
                 $photo = $data->fetch(PDO::FETCH_ASSOC);
 
-                    echo "<img src='assets/avatars/" .$photo['profil']. "' alt='photo_profil' class='profil-img' id='photo_profil'>";
+                    echo "<img src='assets/uploads/" .$photo['profil']. "' alt='photo_profil' class='profil-img' id='photo_profil'>";
             }
         ?>
 

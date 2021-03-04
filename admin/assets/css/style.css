@@ -339,7 +339,8 @@ main {
 .updateBtn,
 .closeBtn,
 .deleteBtn,
-.disabledBtn {
+.disabledBtn,
+.reset button {
   margin: 1rem;
   padding: 0.2rem 1rem;
   border-radius: 20px;
@@ -385,6 +386,11 @@ main {
   border: 1px solid var(--main-color);
 }
 
+.reset{
+  display: flex;
+  justify-content: center;
+}
+
 .table-responsive {
   overflow-x: auto;
 }
@@ -396,7 +402,7 @@ td {
   color: var(--color-dark);
 }
 .member_action{
-  display: flex;
+  /* display: flex; */
   align-items: center;
 }
 .member_action  .viewbtn,
@@ -441,6 +447,11 @@ tbody tr:nth-child(even) {
   text-decoration: none;
   color: var(--color-dark);
 }
+.email_member:hover{
+  color: var(--main-color);
+}
+
+
 
 .badge {
   padding: 0.2rem 1rem;
@@ -708,6 +719,13 @@ tbody tr:nth-child(even) {
   width: 25px;
   background-repeat: no-repeat;
 }
+
+/* **** index **** */
+
+.index_header{
+  color: var(--text-grey);
+}
+
 /* **** Responsive **** */
 
 @media only screen and (min-width: 800px) {

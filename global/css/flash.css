@@ -65,6 +65,7 @@
 }
 
 #notif .card .content{
+  margin-left: 10%;
   display: flex;
   align-items: center;
 }

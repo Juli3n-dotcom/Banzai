@@ -76,37 +76,6 @@ if(isset($_POST['post_id'])){
 
   $result .='</div>';
   
-  // $result .= '  
-  //   <div class="table-responsive">  
-  //        <table class="table table-bordered">';  
-  // while($post = $query->fetch()){
-
-  //  $result .= '  
-  //  <tr>  
-  //       <td width="30%"><label>ID</label></td>  
-  //       <td width="70%">'.$post["id_post"].'</td>  
-  //  </tr>
-  //  <tr>  
-  //       <td width="30%"><label>Logo :</label></td>  
-  //       <td width="70%"><img class="img-logo" src="../global/uploads/'. getImg($pdo, $post['pics_id']).'"></td>  
-  //  </tr> 
-  //  <tr>  
-  //       <td width="30%"><label>Titre :</label></td>  
-  //       <td width="70%">'.$post["titre"].'</td>  
-  //  </tr> 
-  //  <tr>  
-  //       <td width="30%"><label>Mots cles :</label></td>  
-  //       <td width="70%">'.$post["contenu"].'</td>  
-  //  </tr>   
-  //  <tr>  
-  //       <td width="30%"><label>Nombre de sites</label></td>  
-  //       <td width="70%">0</td>  
-  //  </tr>  
-  //  ';  
-
-  // }
-
-  // $result .= "</table></div>"; 
 
   echo $result;
 

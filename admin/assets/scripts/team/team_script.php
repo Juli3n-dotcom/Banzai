@@ -131,7 +131,7 @@ if(isset($_POST['update'])){
         }else{
 
         $extension1 = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-        $path1 = __DIR__.'/../../avatars';
+        $path1 = __DIR__.'/../../uploads';
 
         
 
@@ -163,7 +163,7 @@ if(isset($_POST['update'])){
                     $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
                     $photo = $data->fetch(PDO::FETCH_ASSOC);
 
-                    $file = __DIR__.'/../../avatars';
+                    $file = __DIR__.'/../../uploads';
 
                     opendir($file);
                     unlink($file.$photo['profil']);
@@ -241,7 +241,7 @@ if(isset($_POST['deleteAvatar'])){
     $photo = $data->fetch(PDO::FETCH_ASSOC);
 
 
-    $file = '../../avatars/';
+    $file = '../../uploads/';
     $dir = opendir($file);
     unlink($file.$photo['profil']);
     closedir($dir);
@@ -255,7 +255,7 @@ if(isset($_POST['deleteAvatar'])){
     $req->execute();
 
     ajouterFlash('success','Votre photo a bien été supprimée');
-    header('location: ../../profil_admin.php');
+    header('location: ../../update_profil.php');
 }
 
 /* #############################################################################

@@ -66,7 +66,7 @@ $("#add_post").on('submit', function(e){
 });
 
 /*
- * --> View Category
+ * --> View Post
  * 
  * # Ouverture du Modal de vue
  *

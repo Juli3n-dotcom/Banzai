@@ -34,16 +34,80 @@ function getMemberBy(PDO $pdo, string $colonne, $valeur): ?array
      return $utilisateur ?: null;
       }
 
-  
-// récupération team member par role
-$sql =$pdo->query('SELECT COUNT(*) as nb FROM team WHERE statut = 0');
-$data_membre = $sql->fetch();
-$admin =$data_membre['nb'];
+//count du nombre de membre admin
+function countAdmin(PDO $pdo) {
+  $query = $pdo ->query("SELECT count(*) as nb from team WHERE statut = 0");
+  $data = $query->fetch();
 
-$sql2 =$pdo->query('SELECT COUNT(*) as nb FROM team WHERE statut = 1');
-$data_membre = $sql2->fetch();
-$user =$data_membre['nb'];
+  $count = $data['nb'];
+  return $count;
+}
 
-$sql3 =$pdo->query('SELECT COUNT(*) as nb FROM team WHERE statut = 2');
-$data_membre = $sql3->fetch();
-$editeur =$data_membre['nb'];
+//count du nombre de membre USER
+function countUser(PDO $pdo) {
+  $query = $pdo ->query("SELECT count(*) as nb from team WHERE statut = 1");
+  $data = $query->fetch();
+
+  $count = $data['nb'];
+  return $count;
+}
+
+//count du nombre de membre editeur
+function countEditeur(PDO $pdo) {
+  $query = $pdo ->query("SELECT count(*) as nb from team WHERE statut = 2");
+  $data = $query->fetch();
+
+  $count = $data['nb'];
+  return $count;
+}
+
+// récupération des logos des categories | langages 
+function getPhoto(PDO $pdo, INT $id)
+{
+  $data = $pdo->query("SELECT profil FROM photo WHERE id_photo = '$id'");
+  $photo = $data->fetch(PDO::FETCH_ASSOC);
+  return $photo['profil'];
+}
+
+function getSex(PDO $pdo,INT $sex){
+
+  $civilite = '';
+
+  if($sex === 0){
+    $civilite =  'Monsieur';
+  }else if($sex === 1){
+    $civilite = 'Madame';
+  }else{
+    $civilite = 'Autre';
+  }
+
+  return $civilite;
+}
+
+function getStatut(PDO $pdo,INT $data){
+
+  $statut = '';
+
+  if($data === 0){
+     $statut =  'Admin';
+  }else if($data === 1){
+     $statut = 'User';
+  }else{
+     $statut = 'Editeur';
+  }
+
+  return  $statut;
+}
+
+function getConfirm(PDO $pdo,INT $data){
+
+  $confirmation = '';
+
+  if($data === 0){
+     $confirmation =  'NON';
+  }else if($data === 1){
+     $confirmation = 'OUI';
+  }
+
+  return  $confirmation;
+}
