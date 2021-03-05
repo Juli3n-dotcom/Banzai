@@ -131,7 +131,7 @@ else if(stripos($_SERVER['REQUEST_URI'], 'register.php')){
                                         $data = $pdo->query("SELECT * FROM photo WHERE id_photo = '$id_photo'");
                                         $photo = $data->fetch(PDO::FETCH_ASSOC);
                                    
-                                        echo "<img src='assets/avatars/".$photo['profil']."' alt='photo_profil' class='profil-img'>";
+                                        echo "<img src='assets/uploads/".$photo['profil']."' alt='photo_profil' class='profil-img'>";
                                    }
                               ?>
                          </div>
