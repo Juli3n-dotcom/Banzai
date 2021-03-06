@@ -20,17 +20,27 @@ if(isset($_POST['lang_id'])){
         while($lang = $query->fetch()){
 
         $result .= '<input type="hidden" name="update_id" id="update_id" value="'.$lang['id_langage'].'">';
-        $result .= '<input type="hidden" name="update_img" id="update_img" value="'.$lang['pics_id'].'">';
 
-        $result .= '<img src="../global/uploads/'. getImg($pdo, $lang['pics_id']).'" alt="logo" class="img-logo" id="img-logo">';
+        $result .= '<div class="img-logo"><i class="'.$lang['icone'].'"></i></div>';
 
-            $result .= '<span class="hiddenFileInput">';
-                $result .= '<input type="file" name="new_logo" id="new_logo">';
-            $result .= '</span>';
+        $result .= '<span class="hiddenFileInput plus" id="changeIcone">';
+            $result .= '<input type="button" >';
+        $result .= '</span>';
+
+        $result .= '<div class="mb-3 mt-4 dnone" id="div_new_logo">';
+          $result .= '<label for="update_name_cat">Nouveau Logo : </label>';
+          $result .= '<input type="text"  class="form-control" name="new_logo" id="new_logo" value="'.$lang['icone'].'">';
+        $result .= '</div>';
 
         $result .= '<div class="mb-3 mt-4">';
             $result .= '<label for="update_name_lang">Nom du langage: </label>';
             $result .= '<input type="text"  class="form-control" name="update_name_lang" id="update_name_lang" value="'.$lang['titre'].'">';
+        $result .= '</div>';
+
+        $result .= '<div class="mb-3 mt-4">';
+            $result .= '<label for="skillRange" class="form-label">Pourcentage : </label>';
+            $result .= '<input type="text" id="UpdaterangeReturn" value="'.$lang['number'].' %" class="prctVal"> ';
+            $result .= '<input type="range" class="form-range" min="0" max="100" step="0.5" id="UpdateskillRange" name="UpdateskillRange" value="'.$lang['number'].'">';
         $result .= '</div>';
     }
 

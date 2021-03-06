@@ -96,7 +96,6 @@ $(document).on('click','.deletebtn', function () {
   }).get();
   
   $('#delete_id').val(data[0]);
-  $('#delete_img').val(data[1]);
   
 });
 
@@ -124,9 +123,8 @@ $('#delete_cat').on('submit', function(e){
   function delete_cat(){
 
     var id = $('#delete_id').val();
-    var img = $('#delete_img').val();
     var confirme = $('#confirmedelete').val();
-    var parameters = "id="+id + '&img=' + img + '&confirmedelete=' + confirme;
+    var parameters = "id="+id + '&confirmedelete=' + confirme;
 
         
     $.post('assets/scripts/categories/delete_categorie_script.php', parameters, function(data){
@@ -156,7 +154,9 @@ $('#delete_cat').on('submit', function(e){
  * 
  * # Ouverture du Modal d'edition
  * 
- * ## traitement Ajax de la modification
+ * ## changement de logo - > affichage de la div
+ * 
+ * ### traitement Ajax de la modification
  */
 
  // # Ouverture du Modal de vue
@@ -174,26 +174,14 @@ $(document).on('click','.editbtn', function(){
   });  
 });  
 
-var reader = new FileReader();
-var img;
-// ## view logo if change
-function readURL(input) {
-  if (input.files && input.files[0]) {
-      
+// ## changement de logo
+$(document).on('click', '#changeIcone', function(e){
+  
+  $('#div_new_logo').toggleClass('dnone');
+  $('.hiddenFileInput').toggleClass('plus').toggleClass('minus')
+  
+})
 
-      reader.onload = function (e) {
-          $('#img-logo').attr('src', e.target.result);
-          img = e.target.value;
-      }
-
-      reader.readAsDataURL(input.files[0]);
-  }
-}
-
-$(document).on('change',"#new_logo", function (e) {
-  readURL(this);
-  img = e.target.value;
-});
 
 // ### update cat ajax
 $(document).on('submit', '#update_cat', function(e){

@@ -20,6 +20,16 @@ input[type=submit] {
 
 .dnone {
   display: none;
+  opacity:0;
+  transition:opacity .5s ease-in;
+    -webkit-transition: opacity .5s  ease-in;
+       -moz-transition: opacity .5s  ease-in;
+         -o-transition: opacity .5s  ease-in;
+}
+
+.show{
+  opacity: 1;
+  display: block;
 }
 
 #sidebar-toggle {
@@ -511,6 +521,8 @@ tbody tr:nth-child(even) {
 }
 
 .img-logo {
+  font-size: 1.5rem;
+  color: #777;
   height: 2rem;
   width: 2rem;
   background-repeat: no-repeat;
@@ -649,6 +661,10 @@ tbody tr:nth-child(even) {
   padding: 0;
 }
 
+#update_modal .img-logo{
+  font-size: 2rem;
+}
+
 /* **** modal view team member **** */
 
 .list_container ul li {
@@ -685,6 +701,15 @@ tbody tr:nth-child(even) {
   background-image: url("../../../global/img/plus-circle-solid.svg");
 }
 
+.hiddenFileInput.minus{
+  background-image: url("../../../global/img/plus-circle-solid.svg");
+}
+
+.hiddenFileInput.minus{
+  background-image: url("../../../global/img/minus-circle-solid.svg");
+}
+
+
 .hiddenFileInput.hidden__delete {
   position: relative;
   width: 30px;
@@ -696,9 +721,28 @@ tbody tr:nth-child(even) {
 #update_lang .hiddenFileInput,
 #update_cat .hiddenFileInput,
 #update_post .hiddenFileInput{
-  left: 0;
-  top: 10px;
+  left: 20px;
+  top:0;
 }
+
+.prctVal{
+  border: none;
+    color: #777;
+    padding-left: 10px;
+}
+
+.form-range::-webkit-slider-thumb {
+  background: var(--main-color);
+}
+
+.form-range::-moz-range-thumb {
+  background: var(--main-color);
+}
+
+.form-range::-ms-thumb {
+  background: var(--main-color);
+}
+
 
 /* **** form **** */
 

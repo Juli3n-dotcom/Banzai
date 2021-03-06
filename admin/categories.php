@@ -18,7 +18,7 @@ include __DIR__. '/assets/includes/header_admin.php';
 
     <div class="card__single">
       <div class="card__body">
-      <div class='img-logo' style='background-image: url(../global/uploads/<?=getImg($pdo, $cat['pics_id'])?>)'></div>
+      <div class='img-logo'><i class="<?=$cat['icone']?>"></i></div>
         <div>
           <h5><?= $cat['titre']?></h5>
           <h4><?= getPostbyCar($pdo, $cat['id_categorie'] )?></h4>
@@ -56,7 +56,6 @@ include __DIR__. '/assets/includes/header_admin.php';
           <thead>
             <tr>
                 <th>ID</th>
-                <th class="dnone">pics_id</th>
                 <th>Logo</th>
                 <th>Titre</th>
                 <th>Mots Clés</th>
@@ -74,13 +73,7 @@ include __DIR__. '/assets/includes/header_admin.php';
                 
                 <tr>
                     <td><?=$cat['id_categorie']?></td>
-                    <td class="dnone"><?=$cat['pics_id']?></td>
-                    <?php if($cat["pics_id"] !== NULL){
-                      echo "<td><div class='img-logo' style='background-image: url(../global/uploads/". getImg($pdo, $cat['pics_id']).")'></div></td>";
-                    }else{
-                      echo "<td></td>";
-                    }
-                    ?>  
+                    <td><div class='img-logo'><i class="<?=$cat['icone']?>"></i></div></td>
                     <td><?=$cat['titre']?></td>
                     <td><?=$cat['motscles']?></td>
                     <td><?= getPostbyCar($pdo, $cat['id_categorie'] )?></td>
@@ -135,7 +128,7 @@ include __DIR__. '/assets/includes/header_admin.php';
 
             <div class="mb-3">
               <label for="add_logo" class="form_label">Logo : </label>
-              <input type="file" 
+              <input type="text" 
               name="add_logo" 
               id="add_logo" 
               class="form-control">
@@ -192,7 +185,6 @@ include __DIR__. '/assets/includes/header_admin.php';
        <div class="modal-body">
          <form action="" method="post" id="delete_cat">
            <input type="hidden" name="delete_id" id="delete_id">
-           <input type="hidden" name="delete_img" id="delete_img">
              
            <p>Etes vous sur de vouloir supprimer cette categorie?</p>
  

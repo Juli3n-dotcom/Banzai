@@ -36,13 +36,10 @@ function getIcon(PDO $pdo, string $valeur)
         
         $id = $valeur;
 
-          $query = $pdo->query("SELECT * FROM categories WHERE id_categorie = '$id'");
+          $query = $pdo->query("SELECT icone FROM categories WHERE id_categorie = '$id'");
           $cat = $query->fetch();
           
-          $img = $cat['pics_id'];
-          $query = $pdo->query("SELECT img FROM pics WHERE id_pics = '$img'");
-          $pics = $query->fetch();
-          return "<div class='cat-img' style='background-image: url(../global/uploads/". $pics['img'].")'></div>";
+          return '<div class="img-logo"><i class="'.$cat['icone'].'"></i></div>';
       }
 
 //count du nombre de post

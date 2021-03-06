@@ -27,7 +27,7 @@ if(isset($_POST['cat_id'])){
      </tr>
      <tr>  
           <td width="30%"><label>Logo :</label></td>  
-          <td width="70%"><img class="img-logo" src="../global/uploads/'. getImg($pdo, $cat['pics_id']).'"></td>  
+          <td width="70%"><div class="img-logo"><i class="'.$cat['icone'].'"></i></div></td>  
      </tr> 
      <tr>  
           <td width="30%"><label>Titre :</label></td>  

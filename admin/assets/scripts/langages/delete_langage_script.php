@@ -13,7 +13,6 @@ if(!empty($_POST)){
   
   $result = array();
   $id = $_POST['id'];
-  $img = $_POST['img'];
   $confirme = 'on';
 
   // validation en back de la confirmation de la suppression
@@ -24,19 +23,9 @@ if(!empty($_POST)){
   
     }else{
 
-      //suppresion du logo
-    $data = $pdo->query("SELECT * FROM pics WHERE id_pics = '$img'");
-    $photo = $data->fetch(PDO::FETCH_ASSOC);
-
-    $file =__DIR__.'/../../../../global/uploads/';
-    $dir = opendir($file);
-    unlink($file.$photo['img']);
-    closedir($dir);
-
-    $req1 = $pdo->exec("DELETE FROM pics WHERE id_pics = '$img'");
 
      //suppresion du langage de la BDD
-    $req2 = $pdo->exec("DELETE FROM langages WHERE id_langage = '$id'");
+    $req = $pdo->exec("DELETE FROM langages WHERE id_langage = '$id'");
 
     $result['status'] = true;
     $result['notif'] = notif('success','langage supprimé');
@@ -50,10 +39,9 @@ if(!empty($_POST)){
     $result['resultat'] .= '<thead>
                       <tr>
                         <th>ID</th>
-                        <th class="dnone">pics_id</th>
                         <th>Logo</th>
                         <th>Titre</th>
-                        <th>N° Site</th>';
+                        <th>%</th>';
                         if($Membre['statut'] == 0){
                           $result['resultat'] .= '<th>Actions</th>';
                         }
@@ -66,16 +54,9 @@ if(!empty($_POST)){
 
       $result['resultat'] .= '<tr>';
         $result['resultat'] .= '<td>'.$lang['id_langage'].'</td>';
-        $result['resultat'] .= '<td class="dnone">'.$lang['pics_id'].'</td>';
-
-        if($lang["pics_id"] != NULL){
-          $result['resultat'] .= '<td><div class="img-logo" style="background-image: url(../global/uploads/'.getImg($pdo, $lang["pics_id"]).'")"></div></td>';
-        }else{
-          $result['resultat'] .= '<td> </td>';
-        }
-
+        $result['resultat'] .= '<td><div class="img-logo"><i class="'.$lang['icone'].'"></i></div></td>';
         $result['resultat'] .= '<td>'.$lang['titre'].'</td>';
-        $result['resultat'] .= '<td>0</td>';
+        $result['resultat'] .= '<td>'.$lang['number'].' %</td>';
 
         if($Membre['statut'] == 0){
         $result['resultat'] .= '<td class="member_action">';

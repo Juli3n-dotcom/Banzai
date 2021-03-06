@@ -80,12 +80,9 @@ CREATE TABLE langages
 (
   id_langage INT(3)NOT NULL AUTO_INCREMENT,
   titre VARCHAR(255),
-  pics_id INT(3) DEFAULT NULL,
-    PRIMARY KEY (id_langage),
-    CONSTRAINT fk_langage_pics
-      FOREIGN KEY  (pics_id)
-      REFERENCES  pics(id_pics)
-      ON DELETE SET NULL
+  icone VARCHAR(255) DEFAULT NULL,
+  number INT(3)DEFAULT NULL,
+    PRIMARY KEY (id_langage)
 )ENGINE=INNODB;
 
 CREATE TABLE categories
@@ -93,12 +90,8 @@ CREATE TABLE categories
   id_categorie INT(3)NOT NULL AUTO_INCREMENT,
   titre VARCHAR(255),
   motscles TEXT(255),
-  pics_id INT(3) DEFAULT NULL,
-    PRIMARY KEY (id_categorie),
-    CONSTRAINT fk_cat_pics
-      FOREIGN KEY  (pics_id)
-      REFERENCES  pics(id_pics)
-      ON DELETE SET NULL
+   icone VARCHAR(255) DEFAULT NULL,
+    PRIMARY KEY (id_categorie)
 )ENGINE=INNODB;
 
 

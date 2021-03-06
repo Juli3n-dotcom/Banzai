@@ -27,15 +27,15 @@ if(isset($_POST['lang_id'])){
                 </tr>
                 <tr>  
                      <td width="30%"><label>Logo :</label></td>  
-                     <td width="70%"><img class="img-logo" src="../global/uploads/'. getImg($pdo, $lang['pics_id']).'"></td>  
+                     <td width="70%"><div class="img-logo"><i class="'.$lang['icone'].'"></i></div></td>  
                 </tr> 
                 <tr>  
                      <td width="30%"><label>Titre :</label></td>  
                      <td width="70%">'.$lang["titre"].'</td>  
                 </tr>  
                 <tr>  
-                     <td width="30%"><label>Nombre de sites</label></td>  
-                     <td width="70%">0</td>  
+                     <td width="30%"><label>% de compétences</label></td>  
+                     <td width="70%">'.$lang["number"].' %</td>  
                 </tr>  
                 ';  
 

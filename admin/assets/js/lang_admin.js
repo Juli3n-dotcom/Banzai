@@ -8,7 +8,9 @@ $(document).ready(function () {
  * ## Gestion de l"oublie du nom 
  * Désactivation du BTN si le champs du nom est manquant
  * 
- * ### traitement Ajax de l'ajout
+ * ## retour range
+ * 
+ * #### traitement Ajax de l'ajout
  */
 
   // # modal d'ajout categorie
@@ -28,7 +30,13 @@ $(document).ready(function () {
     }
   });
 
-  // ### ajout langage ajax
+  // ### retour range
+  $(document).on('input', '#skillRange', function() {
+    data = $(this).val();
+    $('#rangeReturn').val(data + ' %');
+});
+
+  // #### ajout langage ajax
   $("#add_lang").on('submit', function(e){
 
     e.preventDefault();
@@ -49,7 +57,7 @@ $(document).ready(function () {
           $('#add_lang').trigger("reset");
           $('#notif').html(data.notif);
           $('#addmodal').modal('hide');
-          $('#lang_table').html(data.resultat); 
+          $('#lang_table').hide().html(data.resultat).fadeIn(); 
                                     
         }else{
     
@@ -85,7 +93,6 @@ $(document).on('click','.deletebtn', function () {
   }).get();
 
   $('#delete_id').val(data[0]);
-  $('#delete_img').val(data[1]);
 
   });
 
@@ -112,9 +119,8 @@ $(document).on('click','.deletebtn', function () {
     function delete_cat(){
 
       var id = $('#delete_id').val();
-      var img = $('#delete_img').val();
       var confirme = $('#confirmedelete').val();
-      var parameters = "id="+id + '&img=' + img + '&confirmedelete=' + confirme;
+      var parameters = "id="+id + '&confirmedelete=' + confirme;
 
         
       $.post('assets/scripts/langages/delete_langage_script.php', parameters, function(data){
@@ -123,7 +129,7 @@ $(document).on('click','.deletebtn', function () {
           $('#delete_lang').trigger("reset");
           $('#notif').html(data.notif);
           $('#deletemodal').modal('hide');
-          $('#lang_table').html(data.resultat); 
+          $('#lang_table').hide().html(data.resultat).fadeIn(); 
                 
         }else{
 
@@ -143,7 +149,9 @@ $(document).on('click','.deletebtn', function () {
  * 
  * ## view logo if change
  * 
- * ### traitement Ajax de la modification
+ * 
+ * 
+ * #### traitement Ajax de la modification
  */
 
 
@@ -162,25 +170,18 @@ $(document).on('click','.editbtn', function(){
   });  
 });  
 
-var reader = new FileReader();
-var img;
-// ## view logo if change
-function readURL(input) {
-  if (input.files && input.files[0]) {
-      
+// ## changement de logo
+$(document).on('click', '#changeIcone', function(e){
+  
+  $('#div_new_logo').toggleClass('dnone');
+  $('.hiddenFileInput').toggleClass('plus').toggleClass('minus')
+  
+})
 
-      reader.onload = function (e) {
-          $('#img-logo').attr('src', e.target.result);
-          img = e.target.value;
-      }
-
-      reader.readAsDataURL(input.files[0]);
-  }
-}
-
-$(document).on('change',"#new_logo", function (e) {
-  readURL(this);
-  img = e.target.value;
+// ### retour range
+$(document).on('input', '#UpdateskillRange', function() {
+  data = $(this).val();
+  $('#UpdaterangeReturn').val(data + ' %');
 });
 
 // ### update langage ajax
@@ -203,7 +204,7 @@ $(document).on('submit', '#update_lang', function(e){
           $('#add_lang').trigger("reset");
           $('#notif').html(data.notif);
           $('#editmodal').modal('hide');
-          $('#lang_table').html(data.resultat); 
+          $('#lang_table').hide().html(data.resultat).fadeIn(); 
                                     
         }else{
         

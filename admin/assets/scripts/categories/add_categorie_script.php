@@ -16,6 +16,7 @@ if(!empty($_POST)){
 
     $titre = $_POST['add_name_cat'];
     $word = $_POST['add_word_cat'];
+    $icone = $_POST['add_logo'];
    
 
     if(getCatBy($pdo,'titre',$titre)!==null){
@@ -23,62 +24,20 @@ if(!empty($_POST)){
       $result['status'] = false;
       $result['notif'] = notif('error','oups cette catégorie existe déjà'); 
 
-    }elseif(empty($_FILES["add_logo"]["tmp_name"])){
+    }elseif(empty($icone)){
 
       $result['status'] = false;
       $result['notif'] = notif('error','oups!  il manque le logo'); 
   
     }else{
 
-      $extension = pathinfo($_FILES['add_logo']['name'], PATHINFO_EXTENSION);
-    $path = __DIR__.'/../../../../global/uploads';
-    // Allow certain file formats 
-    $allowTypes = array('svg', 'jpg', 'png', 'jpeg'); 
 
-    if($_FILES['add_logo']['error'] !== UPLOAD_ERR_OK) {
-
-      $result['status'] = false;
-      $result['notif'] = notif('warning','Probléme lors de l\'envoi du fichier.code '.$_FILES['add_logo']['error']);
-
-    }elseif($_FILES['add_logo']['size']<12 || !in_array($extension, $allowTypes)){
-
-      $result['status'] = false;
-      $result['notif'] = notif('error','Le fichier envoyé n\'est pas une image'); 
-
-    }else{
-
-
-      do{
-        $filename = bin2hex(random_bytes(16));
-        $complete_path = $path.'/'.$filename.'.'.$extension;
-      }while (file_exists( $complete_path));
-
-   }
-
-   if(!move_uploaded_file($_FILES['add_logo']['tmp_name'],$complete_path)){
-
-    $result['status'] = false;
-    $result['notif'] = notif('error','La photo n\'a pas pu être enregistrée'); 
-
-    }else{
-
-      $req1 = $pdo->prepare('INSERT INTO pics(img) VALUES (:img)');
-                  
-      $req1->bindValue(':img',$filename.'.'.$extension);
-      $req1->execute();
-
-  
-      }
-
-
-      $img = $pdo-> lastInsertId();
-      
-      $req2 = $pdo->prepare('INSERT INTO categories(titre, motscles, pics_id) VALUES (:name, :motscles, :img)');
+      $req = $pdo->prepare('INSERT INTO categories(titre, motscles, icone) VALUES (:name, :motscles, :icone)');
         
-            $req2->bindParam(':name',$titre);
-            $req2->bindParam(':motscles',$word);
-            $req2->bindValue(':img',$img);
-            $req2->execute();
+            $req->bindParam(':name',$titre);
+            $req->bindParam(':motscles',$word);
+            $req->bindValue(':icone',$icone);
+            $req->execute();
 
     $result['status'] = true;
     $result['notif'] = notif('success','Nouvelle categorie ajoutée');
@@ -91,7 +50,6 @@ if(!empty($_POST)){
     $result['resultat'] .= '<thead>
                       <tr>
                         <th>ID</th>
-                        <th class="dnone">pics_id</th>
                         <th>Logo</th>
                         <th>Titre</th>
                         <th>Mots Clés</th>
@@ -108,17 +66,10 @@ if(!empty($_POST)){
 
       $result['resultat'] .= '<tr>';
         $result['resultat'] .= '<td>'.$cat['id_categorie'].'</td>';
-        $result['resultat'] .= '<td class="dnone">'.$cat['pics_id'].'</td>';
-
-        if($cat["pics_id"] != NULL){
-          $result['resultat'] .= '<td><div class="img-logo" style="background-image: url(../global/uploads/'.getImg($pdo, $cat["pics_id"]).'")"></div></td>';
-        }else{
-          $result['resultat'] .= '<td> </td>';
-        }
-
+        $result['resultat'] .= '<td><div class="img-logo"><i class="'.$cat['icone'].'"></i></div></td>';
         $result['resultat'] .= '<td>'.$cat['titre'].'</td>';
         $result['resultat'] .= '<td>'.$cat['motscles'].'</td>';
-        $result['resultat'] .= '<td>0</td>';
+        $result['resultat'] .= '<td>'.getPostbyCar($pdo, $cat['id_categorie'] ).'</td>';
 
         if($Membre['statut'] == 0){
         $result['resultat'] .= '<td class="member_action">';

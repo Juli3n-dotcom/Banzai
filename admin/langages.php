@@ -11,39 +11,6 @@ include __DIR__. '/assets/includes/header_admin.php';
 
 <div id="notif"></div>
 
-<section>
-  <div class="dash__cards">
-
-    <div class="card__single">
-      <div class="card__body">
-        <i class="fab fa-html5"></i>
-        <div>
-          <h5>HTML</h5>
-          <h4>0</h4>
-        </div>
-      </div>
-      <div class="card__footer">
-        <a href="">View all</a>
-      </div>
-    </div>
-
-    <div class="card__single">
-      <div class="card__body">
-        <i class="fab fa-php"></i>
-        <div>
-          <h5>PHP</h5>
-          <h4>0</h4>
-        </div>
-      </div>
-      <div class="card__footer">
-        <a href="">View all</a>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
 
 <section class="recent">
   <div class="team__grid">
@@ -64,10 +31,9 @@ include __DIR__. '/assets/includes/header_admin.php';
           <thead>
             <tr>
                 <th>ID</th>
-                <th class="dnone">pics_id</th>
                 <th>Logo</th>
                 <th>Titre</th>
-                <th>N° Site</th>
+                <th>%</th>
                 <?php if($Membre['statut'] == 0) :?>
                 <th>Actions</th>
                 <?php endif;?>
@@ -81,15 +47,10 @@ include __DIR__. '/assets/includes/header_admin.php';
                 
                 <tr>
                     <td><?=$lang['id_langage']?></td>
-                    <td class="dnone"><?=$lang['pics_id']?></td>
-                    <?php if($lang["pics_id"] !== NULL){
-                      echo "<td><div class='img-logo' style='background-image: url(../global/uploads/". getImg($pdo, $lang['pics_id']).")'></div></td>";
-                    }else{
-                      echo "<td></td>";
-                    }
-                    ?>  
+                    <td><div class='img-logo'><i class="<?=$lang['icone']?>"></i></div></td>
+
                     <td><?=$lang['titre']?></td>
-                    <td>0</td>
+                    <td><?=$lang['number']?> %</td>
                     
                     <?php if($Membre['statut'] == 0) :?>
                     <td class="member_action">
@@ -134,10 +95,16 @@ include __DIR__. '/assets/includes/header_admin.php';
 
             <div class="mb-3">
               <label for="add_logo">Logo : </label>
-              <input type="file" 
+              <input type="text" 
               name="add_logo" 
               id="add_logo" 
               class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label for="skillRange" class="form-label">Pourcentage : </label>
+              <input type="text" id="rangeReturn" value="" class="prctVal">
+              <input type="range" class="form-range" min="0" max="100" step="0.5" id="skillRange" name="skillRange">
             </div>
 
 
